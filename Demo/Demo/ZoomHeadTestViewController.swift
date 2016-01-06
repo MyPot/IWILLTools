@@ -46,6 +46,9 @@ extension ZoomHeadTestViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Identifier", forIndexPath: indexPath) as! CollectionViewCell
         cell.imageView.image = dataSource[indexPath.row]
+        if indexPath.row == 0 {
+            cell.mask.hidden = true
+        }
         return cell
     }
     

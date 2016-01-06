@@ -8,46 +8,48 @@
 
 import UIKit
 
-public class UICollectionViewZoomHeadLayout: UICollectionViewFlowLayout {
-    
-    public override init() {
-        super.init()
-        itemSize = CGSize(width: UIScreen.mainScreen().bounds.size.width, height: 100)
-        scrollDirection = UICollectionViewScrollDirection.Vertical
-        minimumLineSpacing = 0
-    }
+private let screenWidth = UIScreen.mainScreen().bounds.width
+private let screenHeight = UIScreen.mainScreen().bounds.height
 
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+public class UICollectionViewZoomHeadLayout: UICollectionViewLayout {
     
-    public override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
-        let targetRect = CGRect(x: 0, y: proposedContentOffset.y, width: collectionView!.bounds.size.width, height: collectionView!.bounds.size.height)
-        let attributes = super.layoutAttributesForElementsInRect(targetRect)
+    public var normailHeight: CGFloat = 100.0
+    public var zoomBigHeight: CGFloat = 240.0
+    
+    private var cellCount: NSInteger!
 
-        if let attributes = attributes {
-            let offsetY = proposedContentOffset.y
-            var offsetAdjustment: CGFloat = 0
-            for attribute in attributes {
-                let itemCenterY = attribute.center.y
-                if abs(itemCenterY - offsetY)  < 50 {
-                    offsetAdjustment = itemCenterY + 50.0
-                }
-            }
-            return CGPoint(x: proposedContentOffset.x, y: offsetAdjustment)
+    public override func prepareLayout() {
+        super.prepareLayout()
+        
+        if let count = collectionView?.numberOfItemsInSection(0) {
+            cellCount = count
         }
-        return proposedContentOffset
+    }
+    
+    public override func collectionViewContentSize() -> CGSize {
+        let size = CGSize(width: screenWidth, height: CGFloat((cellCount - 1) * 100 + 240))
+        return size
+    }
+    
+    public override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+        let attr = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+        if indexPath.row == 0 {
+            attr.size = CGSize(width: screenWidth, height: zoomBigHeight)
+            attr.center = CGPoint(x: screenWidth / 2, y: zoomBigHeight / 2)
+        } else {
+            attr.size = CGSize(width: screenWidth, height: normailHeight)
+            attr.center = CGPoint(x: screenWidth / 2, y: zoomBigHeight + normailHeight / 2 + 100 * CGFloat(indexPath.row - 1))
+        }
+        return attr
     }
     
     public override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let attributes = super.layoutAttributesForElementsInRect(rect)
-//        let visibleRect = CGRect(origin: collectionView!.contentOffset, size: collectionView!.bounds.size)
-        
-        if let attributes = attributes {
-            for attr in attributes {
-                if CGRectIntersectsRect(attr.frame, rect) {
-                    attr.transform3D = CATransform3DMakeScale(1.5, 1.5, 1.0)
-                    attr.zIndex = 1
+        var attributes = [UICollectionViewLayoutAttributes]()
+        for var index = 0; index < cellCount; index++ {
+            let indexPath = NSIndexPath(forItem: index, inSection: 0)
+            if let attr = layoutAttributesForItemAtIndexPath(indexPath) {
+                if CGRectIntersectsRect(rect, attr.frame) {
+                    attributes.append(attr)
                 }
             }
         }
