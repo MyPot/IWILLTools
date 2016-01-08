@@ -223,7 +223,7 @@ class ViewController: UIViewController {
 //        imageView.loadRemoteImageWithURL(NSURL(string: "http://qn-smiledaily-admin.abc360.com/FnrTqsqqconpkqc9FTgDAxiRAXyb.jpg")!, placeholderImage: UIImage(named: "test.jpg"))
 //        view.addSubview(imageView)
         
-//        DeviceUtils.sharedInstance.appStoreVersionWithAppID("952163653") { didHasUpdate in
+//        DeviceUtils.sharedInstance.appStoreVersionWithAppID("") { didHasUpdate in
 //            if didHasUpdate {
 //                print("Has Update!")
 //            }
