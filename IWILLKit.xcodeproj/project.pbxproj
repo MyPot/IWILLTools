@@ -17,6 +17,8 @@
 		4DAAA58B1C3F7CEA002E7A8C /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAA58A1C3F7CEA002E7A8C /* Transitions.swift */; };
 		4DAAA58D1C3F7D0D002E7A8C /* FromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAA58C1C3F7D0D002E7A8C /* FromViewController.swift */; };
 		4DAAA58F1C3F7D18002E7A8C /* ToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAA58E1C3F7D18002E7A8C /* ToViewController.swift */; };
+		4DAAA5971C3F9CD3002E7A8C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAA5961C3F9CD3002E7A8C /* FirstViewController.swift */; };
+		4DAAA5991C3F9CDE002E7A8C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAA5981C3F9CDE002E7A8C /* SecondViewController.swift */; };
 		4DCDC2A91C1D86EC00AD83C3 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDC2A81C1D86EC00AD83C3 /* FileUtils.swift */; };
 		4DE83DD01C3CA075001AD20F /* UICollectionViewCircleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE83DCF1C3CA075001AD20F /* UICollectionViewCircleLayout.swift */; };
 		4DE83DD21C3CA428001AD20F /* UICollectionViewCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE83DD11C3CA428001AD20F /* UICollectionViewCircleCell.swift */; };
@@ -40,6 +42,8 @@
 		4DAAA58A1C3F7CEA002E7A8C /* Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
 		4DAAA58C1C3F7D0D002E7A8C /* FromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromViewController.swift; sourceTree = "<group>"; };
 		4DAAA58E1C3F7D18002E7A8C /* ToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToViewController.swift; sourceTree = "<group>"; };
+		4DAAA5961C3F9CD3002E7A8C /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		4DAAA5981C3F9CDE002E7A8C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4DCDC2A81C1D86EC00AD83C3 /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		4DE83DCF1C3CA075001AD20F /* UICollectionViewCircleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCircleLayout.swift; sourceTree = "<group>"; };
 		4DE83DD11C3CA428001AD20F /* UICollectionViewCircleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCircleCell.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			children = (
 				4DAAA58A1C3F7CEA002E7A8C /* Transitions.swift */,
 				4DAAA5871C3F77F1002E7A8C /* Push & Pop */,
+				4DAAA5951C3F9CB6002E7A8C /* Modal */,
 			);
 			path = TransitionAnimate;
 			sourceTree = "<group>";
@@ -142,6 +147,15 @@
 				4DAAA58E1C3F7D18002E7A8C /* ToViewController.swift */,
 			);
 			path = "Push & Pop";
+			sourceTree = "<group>";
+		};
+		4DAAA5951C3F9CB6002E7A8C /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				4DAAA5961C3F9CD3002E7A8C /* FirstViewController.swift */,
+				4DAAA5981C3F9CDE002E7A8C /* SecondViewController.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		4DCDC2A71C1D86DE00AD83C3 /* Utility */ = {
@@ -289,12 +303,14 @@
 				4D9823211C336B8300298FC0 /* IWCache.swift in Sources */,
 				4D9823231C33706600298FC0 /* IWHTTPRequest.swift in Sources */,
 				4D017E491C35361A003EBE4E /* IWAPIManager.swift in Sources */,
+				4DAAA5991C3F9CDE002E7A8C /* SecondViewController.swift in Sources */,
 				4DE83DD71C3CB6EA001AD20F /* UICollectionViewZoomHeadLayout.swift in Sources */,
 				4DAAA58F1C3F7D18002E7A8C /* ToViewController.swift in Sources */,
 				4DE83DD01C3CA075001AD20F /* UICollectionViewCircleLayout.swift in Sources */,
 				4DE83DD21C3CA428001AD20F /* UICollectionViewCircleCell.swift in Sources */,
 				4DAAA58D1C3F7D0D002E7A8C /* FromViewController.swift in Sources */,
 				4DAAA58B1C3F7CEA002E7A8C /* Transitions.swift in Sources */,
+				4DAAA5971C3F9CD3002E7A8C /* FirstViewController.swift in Sources */,
 				4D017E431C34F1F3003EBE4E /* IWHTTPClient.swift in Sources */,
 				4D017E3F1C34D9A0003EBE4E /* ParameterEncoding.swift in Sources */,
 				4DF62C951C3143DD00FE4BF9 /* Types.swift in Sources */,
