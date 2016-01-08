@@ -88,6 +88,51 @@ public extension UIImage {
     
 }
 
+// MARK: - extension UIImageView
+
+public extension UIImageView {
+    
+    //添加图片缓存
+    func loadRemoteImageWithURL(url: NSURL, placeholderImage: UIImage? = nil) {
+        
+        //如果有占位图片，先设置占位图片
+        if let placeholderImage = placeholderImage {
+            image = placeholderImage
+        }
+        
+        //判断是否有缓存
+        let result = IWCache.sharedInstance.cacheExistsWithdestinationPath(url)
+        
+        if result.isExists {
+            //有缓存，使用filePath生成data，data不为空且使用data生成的图片也不为空，那么就强制解析，然后退出
+            if let imageData = NSData(contentsOfFile: result.filePath) where UIImage(data: imageData) != nil {
+                image = UIImage(data: imageData)!
+            }
+            return
+        }
+        
+        //没有缓存
+        IWCache.sharedInstance.dataWithURL(url) {
+            
+            //缓存过程中有错误
+            if $1 != nil {
+                print("缓存图片发生错误!")
+                return
+            }
+            
+            //没有发生错误
+            if let filePath = $0 {
+                //使用filePath生成data，data不为空且使用data生成的图片也不为空，那么就强制解析，然后退出
+                if let imageData = NSData(contentsOfFile: filePath) where UIImage(data: imageData) != nil {
+                    self.image = UIImage(data: imageData)!
+                }
+            }
+            
+        }
+    }
+    
+}
+
 // MARK: - extension String
 
 public extension String {

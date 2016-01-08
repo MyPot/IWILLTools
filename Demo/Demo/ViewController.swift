@@ -217,26 +217,17 @@ class ViewController: UIViewController {
 //            print($0)
 //        }
         
-        let button = UIButton(frame: CGRect(x: 50, y: 50, width: 100, height: 30))
-        button.setTitle("按钮", forState: UIControlState.Normal)
-        button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        button.addTarget(self, action: "action:", forControlEvents: UIControlEvents.TouchUpInside)
-        view.addSubview(button)
+//        //测试图片缓存
+//        let imageView = UIImageView(frame: CGRect(x: 0, y: 20, width: view.bounds.size.width, height: 200))
+//        imageView.loadRemoteImageWithURL(NSURL(string: "http://qn-smiledaily-admin.abc360.com/FnrTqsqqconpkqc9FTgDAxiRAXyb.jpg")!, placeholderImage: UIImage(named: "test.jpg"))
+//        view.addSubview(imageView)
         
-//        let view1 = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-//        view1.backgroundColor = UIColor.orangeColor()
-//        view.addSubview(view1)
-//        
-//        let view2 = UIView(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
-//        view2.backgroundColor = UIColor.yellowColor()
-//        view.addSubview(view2)
-//        
-//        print(CGRectIntersectsRect(view1.frame, view2.frame))
-    }
-    
-    func action(sender: UIButton) {
-//        presentViewController(TestTableViewController(), animated: true, completion: nil)
-        presentViewController(ZoomHeadTestViewController(), animated: true, completion: nil)
+//        DeviceUtils.sharedInstance.appStoreVersionWithAppID("952163653") { didHasUpdate in
+//            if didHasUpdate {
+//                print("Has Update!")
+//            }
+//        }
+        
     }
 
 }
