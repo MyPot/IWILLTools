@@ -33,19 +33,22 @@ public class UICollectionViewZoomHeadLayout: UICollectionViewLayout {
     
     public override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
         let attr = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-        if indexPath.row == 0 {
+        if indexPath.item == 0 {
             attr.size = CGSize(width: screenWidth, height: zoomBigHeight)
             attr.center = CGPoint(x: screenWidth / 2, y: zoomBigHeight / 2)
         } else {
             attr.size = CGSize(width: screenWidth, height: normailHeight)
-            attr.center = CGPoint(x: screenWidth / 2, y: zoomBigHeight + normailHeight / 2 + 100 * CGFloat(indexPath.row - 1))
+            attr.center = CGPoint(x: screenWidth / 2, y: zoomBigHeight + normailHeight / 2 + 100 * CGFloat(indexPath.item - 1))
         }
         return attr
     }
     
     public override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        
         var attributes = [UICollectionViewLayoutAttributes]()
+        
         for var index = 0; index < cellCount; index++ {
+            
             let indexPath = NSIndexPath(forItem: index, inSection: 0)
             if let attr = layoutAttributesForItemAtIndexPath(indexPath) {
                 if CGRectIntersectsRect(rect, attr.frame) {
@@ -53,7 +56,12 @@ public class UICollectionViewZoomHeadLayout: UICollectionViewLayout {
                 }
             }
         }
+        
         return attributes
+    }
+    
+    public override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        return proposedContentOffset
     }
 
 }

@@ -222,6 +222,16 @@ class ViewController: UIViewController {
         button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         button.addTarget(self, action: "action:", forControlEvents: UIControlEvents.TouchUpInside)
         view.addSubview(button)
+        
+//        let view1 = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+//        view1.backgroundColor = UIColor.orangeColor()
+//        view.addSubview(view1)
+//        
+//        let view2 = UIView(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
+//        view2.backgroundColor = UIColor.yellowColor()
+//        view.addSubview(view2)
+//        
+//        print(CGRectIntersectsRect(view1.frame, view2.frame))
     }
     
     func action(sender: UIButton) {
