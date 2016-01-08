@@ -14,6 +14,9 @@
 		4D9823211C336B8300298FC0 /* IWCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9823201C336B8300298FC0 /* IWCache.swift */; };
 		4D9823231C33706600298FC0 /* IWHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9823221C33706600298FC0 /* IWHTTPRequest.swift */; };
 		4DA1693E1C38F14000FDA6F7 /* IWILLKit-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA1693D1C38F14000FDA6F7 /* IWILLKit-Bridging-Header.h */; };
+		4DAAA58B1C3F7CEA002E7A8C /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAA58A1C3F7CEA002E7A8C /* Transitions.swift */; };
+		4DAAA58D1C3F7D0D002E7A8C /* FromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAA58C1C3F7D0D002E7A8C /* FromViewController.swift */; };
+		4DAAA58F1C3F7D18002E7A8C /* ToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAAA58E1C3F7D18002E7A8C /* ToViewController.swift */; };
 		4DCDC2A91C1D86EC00AD83C3 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCDC2A81C1D86EC00AD83C3 /* FileUtils.swift */; };
 		4DE83DD01C3CA075001AD20F /* UICollectionViewCircleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE83DCF1C3CA075001AD20F /* UICollectionViewCircleLayout.swift */; };
 		4DE83DD21C3CA428001AD20F /* UICollectionViewCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE83DD11C3CA428001AD20F /* UICollectionViewCircleCell.swift */; };
@@ -34,6 +37,9 @@
 		4D9823221C33706600298FC0 /* IWHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWHTTPRequest.swift; sourceTree = "<group>"; };
 		4DA1693B1C38F08A00FDA6F7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DA1693D1C38F14000FDA6F7 /* IWILLKit-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IWILLKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		4DAAA58A1C3F7CEA002E7A8C /* Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
+		4DAAA58C1C3F7D0D002E7A8C /* FromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromViewController.swift; sourceTree = "<group>"; };
+		4DAAA58E1C3F7D18002E7A8C /* ToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToViewController.swift; sourceTree = "<group>"; };
 		4DCDC2A81C1D86EC00AD83C3 /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		4DE83DCF1C3CA075001AD20F /* UICollectionViewCircleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCircleLayout.swift; sourceTree = "<group>"; };
 		4DE83DD11C3CA428001AD20F /* UICollectionViewCircleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCircleCell.swift; sourceTree = "<group>"; };
@@ -74,6 +80,7 @@
 		4D01637E1C1D4FF200A310B3 /* IWILLKit */ = {
 			isa = PBXGroup;
 			children = (
+				4DAAA5861C3F77D5002E7A8C /* TransitionAnimate */,
 				4DE83DCD1C3C9FFD001AD20F /* UICollectionViewLayout */,
 				4D98231F1C336B6400298FC0 /* Cache */,
 				4D16700C1C32225A0005C914 /* AudioPlayer */,
@@ -117,6 +124,24 @@
 				4DA1693B1C38F08A00FDA6F7 /* Info.plist */,
 			);
 			path = Supporting;
+			sourceTree = "<group>";
+		};
+		4DAAA5861C3F77D5002E7A8C /* TransitionAnimate */ = {
+			isa = PBXGroup;
+			children = (
+				4DAAA58A1C3F7CEA002E7A8C /* Transitions.swift */,
+				4DAAA5871C3F77F1002E7A8C /* Push & Pop */,
+			);
+			path = TransitionAnimate;
+			sourceTree = "<group>";
+		};
+		4DAAA5871C3F77F1002E7A8C /* Push & Pop */ = {
+			isa = PBXGroup;
+			children = (
+				4DAAA58C1C3F7D0D002E7A8C /* FromViewController.swift */,
+				4DAAA58E1C3F7D18002E7A8C /* ToViewController.swift */,
+			);
+			path = "Push & Pop";
 			sourceTree = "<group>";
 		};
 		4DCDC2A71C1D86DE00AD83C3 /* Utility */ = {
@@ -265,8 +290,11 @@
 				4D9823231C33706600298FC0 /* IWHTTPRequest.swift in Sources */,
 				4D017E491C35361A003EBE4E /* IWAPIManager.swift in Sources */,
 				4DE83DD71C3CB6EA001AD20F /* UICollectionViewZoomHeadLayout.swift in Sources */,
+				4DAAA58F1C3F7D18002E7A8C /* ToViewController.swift in Sources */,
 				4DE83DD01C3CA075001AD20F /* UICollectionViewCircleLayout.swift in Sources */,
 				4DE83DD21C3CA428001AD20F /* UICollectionViewCircleCell.swift in Sources */,
+				4DAAA58D1C3F7D0D002E7A8C /* FromViewController.swift in Sources */,
+				4DAAA58B1C3F7CEA002E7A8C /* Transitions.swift in Sources */,
 				4D017E431C34F1F3003EBE4E /* IWHTTPClient.swift in Sources */,
 				4D017E3F1C34D9A0003EBE4E /* ParameterEncoding.swift in Sources */,
 				4DF62C951C3143DD00FE4BF9 /* Types.swift in Sources */,

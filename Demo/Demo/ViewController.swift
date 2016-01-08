@@ -211,6 +211,7 @@ class ViewController: UIViewController {
 //        
 ////        player.playRemoteSoundWithURL(url) {
 ////            print($0)
+        
 ////        }
 //        
 //        player.playRemoteSoundUseCacheWithURL(url) {
@@ -228,6 +229,16 @@ class ViewController: UIViewController {
 //            }
 //        }
         
+        let button = UIButton(frame: CGRect(x: 50, y: 100, width: 100, height: 30))
+        button.backgroundColor = UIColor.orangeColor()
+        button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        button.setTitle("Push", forState: UIControlState.Normal)
+        button.addTarget(self, action: "push", forControlEvents: UIControlEvents.TouchUpInside)
+        view.addSubview(button)
+    }
+    
+    func push() {
+        navigationController?.pushViewController(WaveTableViewController(), animated: true)
     }
 
 }

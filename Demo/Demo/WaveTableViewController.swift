@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TestTableViewController: UIViewController {
+class WaveTableViewController: UIViewController {
     
     var tableView: UITableView!
 
@@ -29,7 +29,7 @@ class TestTableViewController: UIViewController {
 
 }
 
-extension TestTableViewController: UITableViewDelegate, UITableViewDataSource {
+extension WaveTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -55,14 +55,13 @@ extension TestTableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        print("willDisplayCell")
         let animate = CABasicAnimation(keyPath: "opacity")
         animate.fromValue = NSNumber(float: 0.0)
         animate.toValue = NSNumber(float: 1.0)
         animate.duration = 5
         animate.autoreverses = false
         animate.removedOnCompletion = false
-        
+
         cell.layer.addAnimation(animate, forKey: nil)
     }
     
