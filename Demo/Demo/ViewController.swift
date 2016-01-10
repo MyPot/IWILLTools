@@ -41,7 +41,7 @@ class ViewController: UIViewController {
 //        */
 //        let time = NSDate().timeIntervalSince1970
 //        let request = IWHTTPRequest.request(Method.POST,
-//            urlString: "http://source.360english.cn:2244/api-dev/V1/students/appLogUpload",
+//            urlString: "",
 //            parameters: [
 //                "time": NSNumber(double: time),
 //                "sid": NSNumber(integer: 135887)
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
 //        /**
 //        *  下载
 //        */
-//        IWAPIManager.sharedInstance.downloadWithURL(NSURL(string: "http://qn-smiledaily-admin.abc360.com/FnrTqsqqconpkqc9FTgDAxiRAXyb.jpg")!) {
+//        IWAPIManager.sharedInstance.downloadWithURL(NSURL(string: "")!) {
 //        
 //            if let error = $1 {
 //                print(error.code)
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
 //        }
         
 //        let path = FileUtils.sharedInstance.cachesDirectoryURL.URLByAppendingPathComponent("imagejpg").path!
-//        IWAPIManager.sharedInstance.downloadWithURL(NSURL(string: "http://qn-smiledaily-admin.abc360.com/FnrTqsqqconpkqc9FTgDAxiRAXyb.jpg")!, saveToPath: path) {
+//        IWAPIManager.sharedInstance.downloadWithURL(NSURL(string: "")!, saveToPath: path) {
 //            
 //            if let error = $1 {
 //                print(error.code)
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
 //            self.view.addSubview(imageView)
 //        }
         
-//        let request = NSMutableURLRequest(URL: NSURL(string: "http://qn-smiledaily-admin.abc360.com/Fj7UUL7sM_rh5vukMa2-5YU9crUE.jpg")!)
+//        let request = NSMutableURLRequest(URL: NSURL(string: "")!)
 //        IWAPIManager.sharedInstance.downloadWithRequest(request) {
 //            if let error = $1 {
 //                print(error.code)
@@ -119,7 +119,7 @@ class ViewController: UIViewController {
 //        }
         
 //        let path = FileUtils.sharedInstance.cachesDirectoryURL.URLByAppendingPathComponent("requestimagejpg").path!
-//        let requestS = NSMutableURLRequest(URL: NSURL(string: "http://qn-smiledaily-admin.abc360.com/Fj7UUL7sM_rh5vukMa2-5YU9crUE.jpg")!)
+//        let requestS = NSMutableURLRequest(URL: NSURL(string: "")!)
 //        IWAPIManager.sharedInstance.downloadWithRequest(requestS, saveToPath: path) {
 //            if let error = $1 {
 //                print(error.code)
@@ -141,7 +141,7 @@ class ViewController: UIViewController {
 //        /**
 //        *   测试缓存
 //        */
-//        IWCache.sharedInstance.dataWithURL(NSURL(string: "http://qn-smiledaily-admin.abc360.com/Fhdko5WDBJeD4UEPQWIrhX9NSVIk.jpg")!) { (filePath, error) in
+//        IWCache.sharedInstance.dataWithURL(NSURL(string: "")!) { (filePath, error) in
 //            print(filePath)
 //            print(error)
 //            let data = NSData(contentsOfFile: filePath!)
@@ -195,9 +195,9 @@ class ViewController: UIViewController {
 //        }
         
 //        /**
-//        *   测试缓存 音频 http://qn-smiledaily-admin.abc360.com/Fq781J0gauqt83tEqMFHIoGUmaz-.mp3
+//        *   测试缓存 音频
 //        */
-//        IWCache.sharedInstance.dataWithURL(NSURL(string: "http://qn-smiledaily-admin.abc360.com/Fq781J0gauqt83tEqMFHIoGUmaz-.mp3")!) { (filePath, error) in
+//        IWCache.sharedInstance.dataWithURL(NSURL(string: "")!) { (filePath, error) in
 //            print(filePath)
 //            print(error)
 //            self.player.playSoundEffect(NSURL(fileURLWithPath: filePath!), complete: { () -> () in
@@ -206,7 +206,7 @@ class ViewController: UIViewController {
 //        }
         
 //        //测试音频
-//        let url = NSURL(string: "http://qn-smiledaily-admin.abc360.com/Fq781J0gauqt83tEqMFHIoGUmaz-.mp3")!
+//        let url = NSURL(string: "")!
 ////        let url = NSBundle.mainBundle().URLForResource("music", withExtension: "mp3")!
 //        
 ////        player.playRemoteSoundWithURL(url) {
@@ -220,7 +220,7 @@ class ViewController: UIViewController {
         
 //        //测试图片缓存
 //        let imageView = UIImageView(frame: CGRect(x: 0, y: 20, width: view.bounds.size.width, height: 200))
-//        imageView.loadRemoteImageWithURL(NSURL(string: "http://qn-smiledaily-admin.abc360.com/FnrTqsqqconpkqc9FTgDAxiRAXyb.jpg")!, placeholderImage: UIImage(named: "test.jpg"))
+//        imageView.loadRemoteImageWithURL(NSURL(string: "")!, placeholderImage: UIImage(named: "test.jpg"))
 //        view.addSubview(imageView)
         
 //        DeviceUtils.sharedInstance.appStoreVersionWithAppID("") { didHasUpdate in

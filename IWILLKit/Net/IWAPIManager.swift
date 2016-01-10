@@ -8,8 +8,7 @@
 
 import Foundation
 
-//let baseURL = "http://source.360english.cn:2244/api-dev/V2/"
-let baseURL = "http://192.168.2.245/api-dev/V2/"
+let baseURL = ""
 
 /**
 在主线程上执行任务
@@ -79,7 +78,7 @@ public class IWAPIManager {
      - returns: Task
      */
     public func login(parameters: [String: AnyObject], completionHandler: DataCompletionHandler? = nil) -> NSURLSessionDataTask {
-        let action = "Students/login"
+        let action = ""
         let method = Method.POST
         return fire(method, action: action, parameters: parameters, completionHandler: completionHandler)
     }
