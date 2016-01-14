@@ -14,7 +14,7 @@ public class AudioPlayer: NSObject {
     /// 背景音乐和音效播放完成后会执行的闭包类型
     public typealias LocalCompleteHandler = () -> ()
     
-    public typealias ProgressHandler = (CGFloat) -> ()
+    public typealias ProgressHandler = (Float) -> ()
     
     /// 背景音乐和音效播放完成后会执行的闭包
     public var completeHandler: LocalCompleteHandler!
@@ -124,7 +124,7 @@ public class AudioPlayer: NSObject {
     }
     
     /**
-     直接播放远程音频，不进行缓存，ProgressHandler 闭包的参数为当前播放进度。
+     直接播放远程音频，不进行缓存，ProgressHandler 闭包的参数为当前播放进度。理论上该方法是可以播放本地音频的。
      
      - parameter url:             远程音频 NSURL
      - parameter progressHandler: 处理当前播放进度
@@ -138,7 +138,7 @@ public class AudioPlayer: NSObject {
             remotePlayer.addPeriodicTimeObserverForInterval(CMTime(value: 1, timescale: 10), queue: dispatch_get_main_queue(), usingBlock: { time in
                 let current = CMTimeGetSeconds(time)
                 let total = CMTimeGetSeconds(playerItem.duration)
-                let progress = CGFloat(current / total)
+                let progress = Float(current / total)
                 if !isnan(progress) {
                     handler(progress)
                 }
@@ -228,7 +228,7 @@ public class AudioPlayer: NSObject {
         remotePlayer.addPeriodicTimeObserverForInterval(CMTime(value: 1, timescale: 10), queue: dispatch_get_main_queue(), usingBlock: { time in
             let current = CMTimeGetSeconds(time)
             let total = CMTimeGetSeconds(playerItem.duration)
-            let progress = CGFloat(current / total)
+            let progress = Float(current / total)
             if !isnan(progress) {
                 progressHandler(progress)
             }
